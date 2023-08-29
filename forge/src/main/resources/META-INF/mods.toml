@@ -1,0 +1,15 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="MIT"
+issueTrackerURL="https://nebulamc.gg/"
+
+[[mods]]
+modId="battlelogscraper"
+version="1.3.1"
+displayName="Scrapes the battle logs"
+displayURL="https://github.com/EnvyWare/"
+credits="Envyful"
+authors="Envyful"
+description='''
+Envyful
+'''
