@@ -1,5 +1,4 @@
-# BattleLogScraper [![Discord](https://img.shields.io/discord/831966641586831431)](https://discord.gg/7vqgtrjDGw)
-[![Downloads](https://img.shields.io/github/downloads/EnvyWare/BattleLogScraper/total.svg)](https://github.com/EnvyWare/BattleLogScraper/releases)
+# BattleLogScraper [![Discord](https://img.shields.io/discord/831966641586831431)](https://discord.gg/7vqgtrjDGw) [![Downloads](https://img.shields.io/github/downloads/EnvyWare/BattleLogScraper/total.svg)](https://github.com/EnvyWare/BattleLogScraper/releases)
 
 This uses mixins to add Discord Webhook support to Pixelmon's battle log system.
 <br>
