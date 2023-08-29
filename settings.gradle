@@ -20,4 +20,5 @@ plugins {
 
 rootProject.name = 'BattleLogScraper'
 include 'forge'
+include 'forge20'
 
