@@ -5,7 +5,7 @@ issueTrackerURL="https://github.com/EnvyWare"
 
 [[mods]]
 modId="battlelogscraper"
-version="1.5.0"
+version="1.6.0"
 displayName="Scrapes the battle logs"
 displayURL="https://github.com/EnvyWare/"
 credits="Envyful"
