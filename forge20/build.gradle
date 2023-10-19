@@ -6,10 +6,10 @@ plugins {
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
-forgeVersion = "1.20.1"
+forgeVersion = "1.20.2"
 
 minecraft {
-    mappings channel: 'official', version: '1.20.1'
+    mappings channel: 'official', version: "1.20.2"
 }
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
@@ -27,18 +27,18 @@ repositories {
 }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:1.20.1-47.1.44"
+    minecraft 'net.minecraftforge:forge:1.20.2-48.0.30'
 
     compileOnly 'org.spongepowered:mixin:0.8.3-SNAPSHOT'
     compileOnly 'org.spongepowered:mixin:0.8.3-SNAPSHOT:processor'
 
-    compileOnly 'pixelmon:Pixelmon-1.20.1-9.2.0-server:9.2.0'
+    compileOnly 'pixelmon:Pixelmon-1.20.2-9.2.4-server:9.2.4'
 
     shadow group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.13'
-    shadow group: 'org.spongepowered', name: 'configurate-yaml', version: '4.0.0'
+    shadow group: 'org.spongepowered', name: 'configurate-yaml', version: '4.2.0-COMMENTS'
 
-    shadow (group: 'com.envyful.api', name: 'commons', version: '5.0.2')
-    shadow (group: 'com.envyful.api', name: 'forge20', version: '5.0.2') {
+    shadow (group: 'com.envyful.api', name: 'commons', version: '5.5.2')
+    shadow (group: 'com.envyful.api', name: 'forge20', version: '5.5.2') {
         transitive = false
     }
 
@@ -71,25 +71,22 @@ shadowJar {
     relocate('org.spongepowered.configurate', 'com.envyful.battle.log.scraper.shade.configurate')
     relocate('org.yaml.snakeyaml', 'com.envyful.battle.log.scraper.shade.snakeyaml')
     relocate('io.leangen.geantyref', 'com.envyful.battle.log.scraper.shade.geantyref')
-    relocate('com.google.gson', 'com.envyful.battle.log.scraper.shade.gson')
     relocate('com.zaxxer', 'com.envyful.battle.log.scraper.shade.hikari')
     relocate('org.slf4j', 'com.envyful.battle.log.scraper.shade.slf4j')
     relocate('com.envyful.api', 'com.envyful.battle.log.scraper.shade.envy.api')
     relocate('org.bstats', 'com.envyful.battle.log.scraper.shade.bstats')
-    relocate('com.google.common', 'com.envyful.battle.log.scraper.shade.guava')
     relocate('org.apache.logging', 'com.envyful.battle.log.scraper.shade.log4j')
     relocate('io.netty', 'com.envyful.battle.log.scraper.shade.netty')
     relocate('io.lettuce', 'com.envyful.battle.log.scraper.shade.lettuce')
     relocate('com.cronutils', 'com.envyful.battle.log.scraper.shade.cronutils')
     relocate('com.cronutils', 'com.envyful.battle.log.scraper.shade.cronutils')
     relocate('com.sun.el', 'com.envyful.battle.log.scraper.shade.sun.el')
-    relocate('javax', 'com.envyful.battle.log.scraper.shade.javax')
-    relocate('javax', 'com.envyful.battle.log.scraper.shade.javax')
     relocate('org.reactivestreams', 'com.envyful.battle.log.scraper.shade.reactivestreams')
     relocate('reactor', 'com.envyful.battle.log.scraper.shade.reactor')
-    relocate('org.apache.commons', 'com.envyful.battle.log.scraper.shade.apache.commons')
-    relocate('org.apache.http', 'com.envyful.battle.log.scraper.shade.apache.http')
+    relocate('org.apache', 'com.envyful.battle.log.scraper.shade.org.apache')
 
+    exclude "com/google/**"
+    exclude "javax/**"
     exclude "**/module-info.class"
     exclude "**/*.properties"
     exclude "**/*.xml"

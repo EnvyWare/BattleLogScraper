@@ -3,6 +3,7 @@ package com.envyful.battle.log.scraper;
 import com.envyful.api.config.yaml.YamlConfigFactory;
 import com.envyful.api.discord.DiscordWebHook;
 import com.envyful.api.forge.command.ForgeCommandFactory;
+import com.envyful.api.forge.command.parser.ForgeAnnotationCommandParser;
 import com.envyful.battle.log.scraper.command.BattleLogScraperCommand;
 import com.envyful.battle.log.scraper.config.BattleLogScraperConfig;
 import net.minecraftforge.common.MinecraftForge;
@@ -25,7 +26,7 @@ public class BattleLogScraper {
 
     private BattleLogScraperConfig config;
 
-    protected final ForgeCommandFactory commandFactory = new ForgeCommandFactory();
+    protected final ForgeCommandFactory commandFactory = new ForgeCommandFactory(ForgeAnnotationCommandParser::new, null);
 
     public BattleLogScraper() {
         instance = this;
@@ -47,7 +48,7 @@ public class BattleLogScraper {
 
     @SubscribeEvent
     public void onRegisterCommand(RegisterCommandsEvent event) {
-        this.commandFactory.registerCommand(event.getDispatcher(), new BattleLogScraperCommand());
+        this.commandFactory.registerCommand(event.getDispatcher(), this.commandFactory.parseCommand(new BattleLogScraperCommand()));
     }
 
     @SubscribeEvent
