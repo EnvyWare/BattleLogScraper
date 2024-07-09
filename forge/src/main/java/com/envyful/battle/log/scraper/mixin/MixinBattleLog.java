@@ -26,7 +26,7 @@ import java.util.concurrent.CompletableFuture;
 @Mixin(BattleLog.class)
 public abstract class MixinBattleLog {
 
-    @Shadow @Final protected BattleController bc;
+    @Shadow(remap = false) @Final protected BattleController bc;
 
     /**
      * @author
